@@ -1,0 +1,15 @@
+
+generator client {
+  provider = "@prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("data source=DESKTOP-9PQ41EK;initial catalog=authtesting;trusted_connection=true")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
